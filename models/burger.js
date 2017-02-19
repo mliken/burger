@@ -9,22 +9,24 @@
 
 var express = require("express");
 
-var orm = require("../config/org.js");
+var orm = require("../config/orm.js");
 
 var burger ={
 	all: function(callback){
 		orm.all("burgers", function(result){
-			callback result;
+			callback (result);
 		});
 	},
+
+	//the variables cols and vals are arrays
 create: function(objColumnVals, values, callback){
 	orm.create("burgers", values, function(result){
 		callback(result);
 	});
 },
-update:function(objColumnVals, condition, callbaack){
+update:function(objColumnVals, condition, callback){
 	orm.update("burgers", condition, function(result){
-		callback (result);
+		callback(result);
 	});
 },
 delete:function(condition,cb){
@@ -32,6 +34,8 @@ delete:function(condition,cb){
 		cb(res);
 	});
 }
+
 };
+//export the database functions for the controller
 module.exports = burger;
 

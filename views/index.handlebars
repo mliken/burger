@@ -20,19 +20,19 @@
 </form>
 
 </li>
-{{/unles}}
+{{/unless}}
 {{/each}}
 </ul>
 
 <ul class="col-sm-6">
 {{#each burgers}}
-{{#if devoured}}
+{{#if this.devoured}}
 <li>
 {{this.burger_name}}
 
 <form action= "/{{this.id}}?_method=DELETE" method="POST">
 <input type="hidden" name="id" value="{{this.id}}">
-<button type="submit"> Throw our the wrapper!</button>
+<button type="submit"> Throw out the wrapper!</button>
 </form>
 
 </li>
