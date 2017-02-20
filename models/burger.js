@@ -19,21 +19,21 @@ var burger ={
 	},
 
 	//the variables cols and vals are arrays
-create: function(objColumnVals, values, callback){
-	orm.create("burgers", values, function(result){
-		callback(result);
-	});
-},
-update:function(objColumnVals, condition, callback){
-	orm.update("burgers", condition, function(result){
-		callback(result);
-	});
-},
-delete:function(condition,cb){
-	orm.delete("burgers",condition,function(res){
-		cb(res);
-	});
-}
+	create: function(objColumnVals, values, callback){
+		orm.create("burgers", values, function(result){
+			callback(result);
+		});
+	},
+	update:function(objColumnVals, condition, callback){
+		orm.update("burgers", condition, function(result){
+			callback(result);
+		});
+	},
+	delete:function(condition,cb){
+		orm.delete("burgers",condition,function(res){
+			cb(res);
+		});
+	}
 
 };
 //export the database functions for the controller

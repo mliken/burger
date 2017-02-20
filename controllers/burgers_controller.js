@@ -21,17 +21,17 @@ router.get("/", function(req, res) {
 router.post("/", function(req, res) {
   burger.create([
     "burger_name", "devoured"
-  ], [
+    ], [
     req.body.burgerName, 0
-  ], function() {
-    res.redirect("/");
-  });
+    ], function() {
+      res.redirect("/");
+    });
 });
 
 router.put("/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
- 
+  
   burger.update({
     devoured: req.body.devour
   }, condition, function() {
